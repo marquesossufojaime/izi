@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Feliz Dia dos Namorados</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f7e6e6; /* cor de fundo padrão */
+      transition: background-color 0.5s ease; /* transição de cor suave */
+      margin: 0;
+      padding: 0;
+    }
+
+    .container {
+      max-width: 100%;
+      margin: 0 auto;
+      text-align: center;
+      padding: 20px;
+    }
+
+    h1 {
+      color: #ff66b3; /* cor de texto romântica */
+    }
+
+    label {
+      display: block;
+      margin-bottom: 10px;
+    }
+
+    input[type="email"] {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 20px;
+    }
+
+    button {
+      padding: 10px 20px;
+      background-color: #ff66b3; /* cor de fundo do botão romântica */
+      color: #fff;
+      border: none;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #e64d98; /* cor de fundo do botão quando hover */
+    }
+
+    #message {
+      margin-top: 20px;
+      color: #ffffff; /* cor do texto da mensagem romântica */
+    }
+
+    .hearts {
+      display: none;
+      margin-top: 20px;
+      font-size: 50px;
+    }
+
+    @media (min-width: 768px) {
+      .hearts {
+        display: block;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Feliz Dia dos Namorados! <br>
+        I+M
+    </h1>
+    <form id="emailForm">
+      <label for="email">Insira seu e-mail:</label>
+      <input type="email" id="email" name="email">
+      <button type="submit">Enviar</button>
+    </form>
+    <p id="message"></p>
+    <div class="hearts">
+      &#10084;&#65039; &#10084;&#65039; &#10084;&#65039;
+    </div>
+  </div>
+
+  <script>
+    document.getElementById('emailForm').addEventListener('submit', function(event) {
+      event.preventDefault();
+      
+      var email = document.getElementById('email').value;
+      
+      if (email === 'izildaalvaro8@gmail.com') {
+        document.getElementById('message').innerText = 'Feliz Dia dos Namorados, amor!';
+        document.body.style.backgroundColor = '#990099'; /* muda a cor de fundo para roxo */
+        document.querySelector('.hearts').style.display = 'block'; /* exibe os corações */
+      } else {
+        document.getElementById('message').innerText = 'Email incorreto. Tente novamente.';
+        document.body.style.backgroundColor = '#f7e6e6'; /* mantém a cor de fundo padrão */
+        document.querySelector('.hearts').style.display = 'none'; /* esconde os corações */
+        setTimeout(function() {
+          document.getElementById('message').innerText = '';
+        }, 3000); // Remove a mensagem de erro após 3 segundos
+      }
+    });
+  </script>
+</body>
+</html>
